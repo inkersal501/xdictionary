@@ -35,10 +35,11 @@ function App() {
           <button type="submit">Search</button>
         </div>
       </form>
-      <p><b>Definition:</b></p>
 
-      {showDef && <p style={{marginTop:"20px"}}>{def}</p> }
- 
+      <div>
+        <h4>Definition:</h4> 
+        {showDef && <p>{def}</p>}
+      </div>
     </div>
   );
 }
