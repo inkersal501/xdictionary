@@ -23,6 +23,8 @@ function App() {
         setDef(filter[0].meaning);
       }
       // setShowDef(true);
+    }else{
+      setDef("Word not found in the dictionary.");
     }
   };
   
@@ -31,7 +33,7 @@ function App() {
       <h1>Dictionary App</h1> 
       <form onSubmit={handleForm}>
         <div>
-          <input type="text" id="searchInput" onChange={(e)=>setSearchInput(e.target.value)} value={searchInput} placeholder="Search for a word..." required/>
+          <input type="text" id="searchInput" onChange={(e)=>setSearchInput(e.target.value)} value={searchInput} placeholder="Search for a word..." />
           <button type="submit">Search</button>
         </div>
       </form>
