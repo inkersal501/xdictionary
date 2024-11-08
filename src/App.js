@@ -13,15 +13,17 @@ function App() {
 
   const handleForm = (e)=>{
     e.preventDefault();
-    const filter = dictionary.filter((elem)=>{
-      return elem.word.toLowerCase().includes(searchInput.toLowerCase());
-    });
-    if(filter.length===0){
-      setDef("Word not found in the dictionary.");
-    }else{
-      setDef(filter[0].meaning);
+    if(searchInput!==""){
+      const filter = dictionary.filter((elem)=>{
+        return elem.word.toLowerCase().includes(searchInput.toLowerCase());
+      });
+      if(filter.length===0){
+        setDef("Word not found in the dictionary.");
+      }else{
+        setDef(filter[0].meaning);
+      }
+      setShowDef(true);
     }
-    setShowDef(true);
   };
   
   return (
@@ -29,7 +31,7 @@ function App() {
       <h1>Dictionary App</h1>
       <form onSubmit={handleForm}>
         <div>
-          <input type="text" id="searchInput" onInput={(e)=>{setSearchInput(e.target.value);setShowDef(false)}} value={searchInput} placeholder="Search for a word..."/>
+          <input type="text" id="searchInput" onInput={(e)=>{setSearchInput(e.target.value);setShowDef(false)}} value={searchInput} placeholder="Search for a word..." required/>
           <button type="submit">Search</button>
         </div>
       </form>
