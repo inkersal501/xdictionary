@@ -8,7 +8,7 @@ function App() {
       { word: "State", meaning: "An object that stores data for a component." }  
     ];
   const [searchInput, setSearchInput] = useState("");
-  const [showDef, setShowDef] = useState(false);
+  // const [showDef, setShowDef] = useState(false);
   const [def, setDef] = useState("");
 
   const handleForm = (e)=>{
@@ -22,7 +22,7 @@ function App() {
       }else{
         setDef(filter[0].meaning);
       }
-      setShowDef(true);
+      // setShowDef(true);
     }
   };
   
@@ -31,14 +31,14 @@ function App() {
       <h1>Dictionary App</h1> 
       <form onSubmit={handleForm}>
         <div>
-          <input type="text" id="searchInput" onChange={(e)=>{setSearchInput(e.target.value);setShowDef(false)}} value={searchInput} placeholder="Search for a word..." required/>
+          <input type="text" id="searchInput" onChange={(e)=>setSearchInput(e.target.value)} value={searchInput} placeholder="Search for a word..." required/>
           <button type="submit">Search</button>
         </div>
       </form>
 
       <div>
         <h4>Definition:</h4> 
-        {showDef && <p>{def}</p>}
+        <p>{def}</p>
       </div>
     </div>
   );
