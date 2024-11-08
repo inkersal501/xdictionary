@@ -28,7 +28,7 @@ function App() {
   
   return (
     <div className="App">
-      <h1>Dictionary App</h1>
+      <h1>Dictionary App</h1> 
       <form onSubmit={handleForm}>
         <div>
           <input type="text" id="searchInput" onChange={(e)=>{setSearchInput(e.target.value);setShowDef(false)}} value={searchInput} placeholder="Search for a word..." required/>
@@ -38,6 +38,7 @@ function App() {
       <p><b>Definition:</b></p>
 
       {showDef && <p style={{marginTop:"20px"}}>{def}</p> }
+ 
     </div>
   );
 }
